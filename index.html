@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Smart Parking</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eaf4ff;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        .container {
+            background: white;
+            width: 400px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            color: #1769aa;
+        }
+
+        h2 {
+            color: #444;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin-top: 6px;
+            border: 1px solid #bbb;
+            border-radius: 8px;
+        }
+
+        button {
+            background: #1769aa;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #0d4f80;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>AI-Based Smart Parking System</h1>
+
+    <img src="{{ url_for('static', filename='parking_cctv.png.jpeg') }}" width="100%">
+
+    <h2>Parking Availability Prediction</h2>
+
+    <p>This system uses machine learning to predict available parking slots based on time and occupancy.</p>
+
+    <form action="/predict" method="get">
+
+        <label>Time:</label><br>
+        <input type="number" name="time" value="12" required>
+        <br><br>
+
+        <label>Total Parking Slots:</label><br>
+        <input type="number" name="total_slots" value="100" required>
+        <br><br>
+
+        <label>Occupied Slots:</label><br>
+        <input type="number" name="occupied_slots" value="60" required>
+        <br><br>
+
+        <button type="submit">Predict Available Slots</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
